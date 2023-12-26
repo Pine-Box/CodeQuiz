@@ -31,9 +31,11 @@ function showFinalScore() {
 
 // The startGame function is called when the start button is clicked
 function startQuiz() {
-    timerCount = 2;
+    timerCount = 5;
     // Prevents start button from being clicked when round is in progress
     startButton.disabled = true;
+        end.style.display = "none";
+    start.style.display = "block";
     startTimer()
 }
 
