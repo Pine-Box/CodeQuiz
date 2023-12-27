@@ -14,14 +14,25 @@ a:hover {
   color: #8570a5;
 }
 
-.hide {
+#submit-Button {
+  display : none;
+}
+
+#startQuiz-Button {
+  display: block;
+}
+
+#start-screen {
+  display: block;
+}
+
+#end-screen {
   display: none;
 }
 
-.start {
-  display:block
+#feedback {
+  display: none;
 }
-
 .scores {
   position: absolute;
   top: 10px;

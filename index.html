@@ -12,7 +12,7 @@
 <body>
 <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand">Javascript Testing Center Inc.</a>
+        <a class="navbar-brand">Javascript Test Center Ltd.</a>
         <div class="d-flex">
             <div class="timer">Time: <span id="time">0</span></div>
         </div>
@@ -21,8 +21,8 @@
 <div class="container-fluid my-3">
     <div class="row">
         <div class="p-5 text-center bg-body-tertiary rounded-3 col-md-4 m-auto">
-            <img class="bi mt-4 mb-3" src="./assets/images/JavaScript-logo.png" width="300" height="300">
-            <div id="start-screen" class="start">
+            <img class="bi mt-4 mb-3" src="./assets/images/JavaScript-logo.png" width="200" height="200">
+            <div id="start-screen">
                 <h1 class="text-body-emphasis">Coding Quiz</h1>
                 <p class="col-lg-8 mx-auto fs-5 text-muted">
                     Try to answer the following code-related questions within the time
@@ -30,31 +30,37 @@
                     score/time by ten seconds!
                 </p>
             </div>
-            <div id="questions" class="hide">
-                <h1 id="question-title"></h1>
-                <div id="choices" class="choices"></div>
-            </div>
-            <div id="end-screen" class="hide">
+            <div id="end-screen">
                 <h1>All done!</h1>
                 <p>Your final score is <span id="final-score"></span>.</p>
                 <p>
-                    Enter initials: <input type="text" id="initials" max="3"/>
-                    <button id="submit">Submit</button>
+                    Enter initials:
+                    <label for="initials"></label><input type="text" id="initials" max="3">
                 </p>
             </div>
+            <div id="questions">
+                <h1 id="question-title"></h1>
+                <div id="choices" class="choices"></div>
+            </div>
             <div class="d-inline-flex gap-2 mb-5 mt-5">
-                <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" id="startQuiz-Button" type="button">
+                <button class="btn btn-primary btn-lg px-4 rounded-pill"
+                        id="startQuiz-Button" type="button">
                     Start Quiz
                 </button>
-                <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
+                <button class="btn btn-primary btn-lg px-4 rounded-pill"
+                        id="submit-Button" type="button">
+                    Submit
+                </button>
+                <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill"
+                        id="scores-Button"  type="button">
                     Highest Scores
                 </button>
             </div>
         </div>
+        <div id="feedback" class="feedback">Feedback here</div>
     </div>
-    <div id="feedback" class="feedback hide"></div> Feedback here</div>
 </div>
-    <script src="./assets/js/questions.js"></script>
-    <script src="./assets/js/logic.js"></script>
+<script src="./assets/js/questions.js"></script>
+<script src="./assets/js/logic.js"></script>
 </body>
 </html>
