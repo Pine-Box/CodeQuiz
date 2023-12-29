@@ -1,8 +1,10 @@
 const timerElement = document.querySelector('.timer')
 const startButton = document.getElementById("startQuiz-Button");
 const submitButton = document.getElementById("submit-Button");
+const scoresButton = document.getElementById("scores-Button");
 const start = document.getElementById("start-screen");
-const end = document.getElementById("end-screen")
+const end = document.getElementById("end-screen");
+const scoresModal = document.getElementById("scores-Modal");
 
 let timer;
 let timerCount = 0;
@@ -49,8 +51,13 @@ function startQuiz() {
     startTimer()
 }
 
+function scores() {
+
+}
+
 init();
 // Attach event listener to start button to call startQuiz function on click
 startButton.addEventListener("click", startQuiz);
 submitButton.addEventListener("click", init);
+
 
