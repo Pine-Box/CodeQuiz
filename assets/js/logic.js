@@ -1,22 +1,26 @@
 const timerElement = document.querySelector('.timer')
-const startButton = document.getElementById("startQuiz-Button");
-const submitButton = document.getElementById("submit-Button");
-const scoresButton = document.getElementById("scores-Button");
-const start = document.getElementById("start-screen");
-const end = document.getElementById("end-screen");
-const scoresModal = document.getElementById("scores-Modal");
+//buttons
+const startQuizButton = document.getElementById("startQuiz-Button");
+const submitInitialsButton = document.getElementById("submit-Button");
+const highScoresButton = document.getElementById("highScores-Button");
+const nextQuestionButton = document.getElementById("nextQuestion-Button");
+//screens
+const startQuizScreen = document.getElementById("startQuiz-screen");
+const questionsScreen = document.getElementById("questions-screen");
+const submitInitialsScreen = document.getElementById("submitInitials-screen");
+const highScoresScreen = document.getElementById("highScores-screen");
 
+//initialising variables
 let timer;
 let timerCount = 0;
 let stoptimer = false;
-
 
 
 // The setTimer function starts and stops the timer
 function startTimer() {
     // Sets timer
     timer = setInterval(function () {
-        if  (stoptimer === false) {
+        if (stoptimer === false) {
             timerCount--;
             timerElement.textContent = timerCount;
         }
@@ -29,35 +33,101 @@ function startTimer() {
     }, 1000);
 }
 
+
+// hides the quiz start elements
+function hideQuizStart(hide) {
+    if (hide === true) {
+        startQuizScreen.style.display = "none";
+        startQuizButton.style.display = "none";
+    } else {
+        startQuizScreen.style.display = "block";
+        startQuizButton.style.display = "block";
+        highScoresButton.style.display = "block";
+    }
+}
+
+//hides the questions elements
+function hideQuestions(hide) {
+    if (hide === true) {
+        questionsScreen.style.display = "none";
+        nextQuestionButton.style.display = "none";
+    } else {
+        questionsScreen.style.display = "block";
+        nextQuestionButton.style.display = "block"
+    }
+}
+
+// hides the final score elements
+function hideFinalScore(hide) {
+    if (hide === true) {
+        submitInitialsScreen.style.display = "none";
+        submitInitialsButton.style.display = "none";
+        //highScoresButton.style.display = "none";
+    } else {
+        submitInitialsScreen.style.display = "block";
+        submitInitialsButton.style.display = "block"
+    }
+}
+
+// hides the highest score elements
+function hideScores(hide) {
+    if (hide === true) {
+        highScoresScreen.style.display = "none";
+        highScoresButton.style.display = "none";
+    } else {
+        highScoresScreen.style.display = "block";
+        highScoresButton.style.display = "block"
+    }
+}
+
+
+
+// initiates the start of the game
+function startQuiz() {
+    startTimer()
+    hideQuizStart(true);
+    hideQuestions(false);
+    hideFinalScore(true);
+    hideScores(true);
+}
+
+//iterates through the questions to be answered - note next xbutton disabled until answer is selected
+function showNextQuestion(){
+
+}
+
+//show the final scores for submission
+function showFinalScore() {
+    hideQuizStart(true);
+    hideQuestions(true);
+    hideFinalScore(false);
+    hideScores(true);
+}
+
+// shows the highest score details
+function showHighestScores() {
+    hideQuizStart(true);
+    hideQuestions(true);
+    hideFinalScore(true);
+    hideScores(false);
+}
+//initailises the game start
 function init() {
-    end.style.display = "none";
-    start.style.display = "block";
-    startButton.style.display = "block";
-    submitButton.style.display = "none";
+    hideScores(true);
+    hideQuestions(true)
+    hideFinalScore(true);
+    hideQuizStart(false);
     stoptimer = false;
     timerCount = 5;
 }
 
-function showFinalScore() {
-    end.style.display = "block";
-    start.style.display = "none";
-    startButton.style.display = "none";
-    submitButton.style.display = "block";
-}
 
-
-// The startGame function is called when the start button is clicked
-function startQuiz() {
-    startTimer()
-}
-
-function scores() {
-
-}
-
-init();
+//set the initial quiz state
+    init();
 // Attach event listener to start button to call startQuiz function on click
-startButton.addEventListener("click", startQuiz);
-submitButton.addEventListener("click", init);
+    startQuizButton.addEventListener("click", startQuiz);
+    submitInitialsButton.addEventListener("click", startQuiz);
+    highScoresButton.addEventListener("click", showHighestScores);
+    nextQuestionButton.addEventListener("click", showNextQuestion);
 
 

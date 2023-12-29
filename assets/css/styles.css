@@ -14,19 +14,36 @@ a:hover {
   color: #8570a5;
 }
 
+
 #submit-Button {
   display : none;
+}
+
+#nextQuestion-Button {
+  display : none;
+}
+
+#highScores-Button {
+  display: none;
 }
 
 #startQuiz-Button {
   display: block;
 }
 
-#start-screen {
-  display: block;
+#startQuiz-screen {
+  display : none;
 }
 
-#end-screen {
+#questions-screen {
+  display: none;
+}
+
+#submitInitials-screen {
+  display: none;
+}
+
+#highScores-screen {
   display: none;
 }
 
