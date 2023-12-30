@@ -1,5 +1,5 @@
-const questions = {
-    "questions" :[ {
+const questions = [
+    {
         "id": 1,
         "question_text" : "Javascript is an _______ language?",
         "options_text": ["Object-Oriented","Object-Based","Procedural","None of the above"],
@@ -53,4 +53,3 @@ const questions = {
     },
 
         ]
-}

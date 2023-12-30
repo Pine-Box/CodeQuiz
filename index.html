@@ -30,9 +30,16 @@
                     score/time by ten seconds!
                 </p>
             </div>
-             <div id="questions-screen">
-                <h1 id="question">Question</h1>
-                <p id="options"> options</p>
+             <div id="questions-screen" class="text-start">
+                <h1 id="question" >Question</h1>
+                <input type="checkbox"   name="option1" value="option1">
+                <label id="option1" for="option1"> Option 1</label><br>
+                <input type="checkbox" name="option2" value="option2">
+                <label id="option2" for="option2"> Option 2</label><br>
+                <input type="checkbox"  name="option3" value="option3">
+                <label id="option3" for="option3"> Option 3</label><br>
+                <input type="checkbox" name="option4" value="option4">
+                <label id="option4" for="option4"> Option 4</label><br>
             </div>
             <div id="submitInitials-screen">
                 <h1>All done!</h1>
@@ -44,7 +51,20 @@
             </div>
             <div id="highScores-screen">
                 <h1 id="question-title"></h1>
-                <div id="choices" class="choices"></div>
+                 <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Initials</th>
+                      <th scope="col">Score</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tableScores">
+                    <tr>
+                      <td>FU</td>
+                      <td>90%</td>
+                    </tr>
+                  </tbody>
+                 </table>
             </div>
             <div class="d-inline-flex gap-2 mb-5 mt-5">
                 <button class="btn btn-primary btn-lg px-4 rounded-pill"
@@ -59,9 +79,13 @@
                         id="highScores-Button" type="button">
                     Highest Scores
                 </button>
-                <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill"
+                <button class="btn btn-primary btn-lg px-4 rounded-pill"
                         id="nextQuestion-Button" type="button">
                     Next
+                </button>
+                <button class="btn btn-primary btn-lg px-4 rounded-pill"
+                        id="highScoresBack-Button" type="button">
+                    Back
                 </button>
             </div>
         </div>
