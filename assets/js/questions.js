@@ -42,7 +42,7 @@ const questions = [
         "answer" : 1
     },{
         "id": 9,
-        "question_text" : "9. What is the use of the <noscript> tag in Javascript?",
+        "question_text" : "9. What is the use of the noscript tag in Javascript?",
         "options_text": ["The contents are displayed by non-JS-based browsers.","Clears all cookies and cache","Both A and B","None of the above."],
         "answer" : 1
     },{
@@ -54,6 +54,3 @@ const questions = [
 
         ];
 
-class questionManager{
-
-}
