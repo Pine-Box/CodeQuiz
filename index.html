@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
 
     <meta charset="utf-8">
@@ -22,6 +22,7 @@
     <div class="row">
         <div class="p-5 text-center bg-body-tertiary rounded-3 col-md-4 m-auto">
             <img class="bi mt-4 mb-3" src="./assets/images/JavaScript-logo.png" width="200" height="200">
+            <!-- introduction screen to page -->
             <div id="startQuiz-screen">
                 <h1 class="text-body-emphasis">Coding Quiz</h1>
                 <p class="col-lg-8 mx-auto fs-5 text-muted">
@@ -30,23 +31,25 @@
                     score/time by ten seconds!
                 </p>
             </div>
-             <div id="questions-screen" class="text-start">
-                <h1 id="question" >Question</h1>
-                <input type="checkbox"   name="option1" value="option1">
-                <label id="option1" for="option1"> Option 1</label><br>
-                <input type="checkbox" name="option2" value="option2">
-                <label id="option2" for="option2"> Option 2</label><br>
-                <input type="checkbox"  name="option3" value="option3">
-                <label id="option3" for="option3"> Option 3</label><br>
-                <input type="checkbox" name="option4" value="option4">
-                <label id="option4" for="option4"> Option 4</label><br>
+            <!-- question screen - pressing next updates questions/options -->
+             <div id="questions-screen" class="text-start" >
+                <h2 id="question" >Question</h2>
+                <input type="radio"   name="option" id="label1" value="1">
+                <label id="option1" for="label1"> Option 1</label><br>
+                <input type="radio" name="option" id="label2" value="2">
+                <label id="option2" for="label2"> Option 2</label><br>
+                <input type="radio"  name="option" id="label3" value="3" >
+                <label id="option3" for="label3"> Option 3</label><br>
+                <input type="radio" name="option" id="label4" value="4" >
+                <label id="option4" for="label4"> Option 4</label><br>
             </div>
+            <!-- Final score screen where initials can be entered -->
             <div id="submitInitials-screen">
                 <h1>All done!</h1>
                 <p>Your final score is <span id="final-score"></span>.</p>
                 <p>
                     Enter initials:
-                    <label for="initials"></label><input type="text" id="initials" max="3">
+                    <label for="initials"></label><input type="text" id="initials" maxlength="3" required>
                 </p>
             </div>
             <div id="highScores-screen">
@@ -60,21 +63,24 @@
                   </thead>
                   <tbody id="tableScores">
                     <tr>
-                      <td>FU</td>
+                      <td>Foo</td>
                       <td>90%</td>
                     </tr>
                   </tbody>
                  </table>
             </div>
             <div class="d-inline-flex gap-2 mb-5 mt-5">
+                <!-- starts quiz - timer is triggered and the first question is displayed -->
                 <button class="btn btn-primary btn-lg px-4 rounded-pill"
                         id="startQuiz-Button" type="button">
                     Start Quiz
                 </button>
+                <!-- submit score to be in the top ten highest scores-->
                 <button class="btn btn-primary btn-lg px-4 rounded-pill"
                         id="submit-Button" type="button">
                     Submit
                 </button>
+                <!-- highest score screen shows table of the top ten highest scores submitted-->
                 <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill"
                         id="highScores-Button" type="button">
                     Highest Scores
@@ -83,16 +89,17 @@
                         id="nextQuestion-Button" type="button">
                     Next
                 </button>
+                <!-- back returns to the start quiz screen -->
                 <button class="btn btn-primary btn-lg px-4 rounded-pill"
                         id="highScoresBack-Button" type="button">
                     Back
                 </button>
             </div>
         </div>
-        <div id="feedback" class="feedback">Feedback here</div>
     </div>
 </div>
+<script type="module" src="./assets/js/storage.js"></script>
 <script src="./assets/js/questions.js"></script>
-<script src="./assets/js/logic.js"></script>
+<script type="module" src="./assets/js/logic.js"></script>
 </body>
 </html>
