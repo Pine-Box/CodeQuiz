@@ -49,4 +49,4 @@ Follow the link to view the Code Quiz landing page:
 
 [https://pine-box.github.io/CodeQuiz/](https://pine-box.github.io/CodeQuiz/)
 
-![Code Quiz Landing Page](https://github.com/Pine-Box/passgen/blob/main/assets/images/05-javascript-challenge-demo.png)
+![Code Quiz Landing Page](https://github.com/Pine-Box/passgen/blob/main/assets/images/codequiz.png)
