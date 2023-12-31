@@ -1,13 +1,18 @@
 
 //functions to manage local storage
-function storehighScores() {
-  let highScores = [{"initials": "RM","score": 100},{"initials": "MM","score": 90}];
-  localStorage.setItem("highScores", JSON.stringify(highScores));
+export function storeHighScores(initials, score) {
+  let scores = loadHighScores();
+  scores.push({"initials": initials, "score": score});
+  scores.sort(function(a, b){return b.score - a.score});
+  localStorage.setItem("highScores", JSON.stringify(scores));
 }
 
-function loadHighScores() {
-  return  JSON.parse(localStorage.getItem("highScores"))
+export function loadHighScores() {
+  let scores =  JSON.parse(localStorage.getItem("highScores"));
+  if (scores == null)
+    scores = [];
+  return scores;
 }
 
-export{ storehighScores, loadHighScores }
+
 

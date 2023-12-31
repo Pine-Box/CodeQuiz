@@ -1,4 +1,5 @@
-import {showFinalScore,showHighestScores,showNextQuestion,startQuiz,init} from "./logic.js";
+import {showFinalScore,showHighestScores,showNextQuestion,startQuiz,init,correctAnswers} from "./logic.js";
+import {loadHighScores, storeHighScores} from "./storage.js";
 
 //screens
 const startQuizScreen = document.getElementById("startQuiz-screen");
@@ -65,12 +66,16 @@ function hideScores(hide) {
 
 function enableSubmitButton(){
     submitInitialsButton.disabled = false;
-    console.log("enable button");
+}
+
+function updateHighScores() {
+    storeHighScores(inputSubmission.value, correctAnswers*10);
+    init();
 }
 
 // Attach event listener to start button to call startQuiz function on click
     startQuizButton.addEventListener("click", startQuiz);
-    submitInitialsButton.addEventListener("click", init);
+    submitInitialsButton.addEventListener("click", updateHighScores);
     highScoresButton.addEventListener("click", showHighestScores);
     nextQuestionButton.addEventListener("click", showNextQuestion);
     highScoresBackButton.addEventListener("click", init);

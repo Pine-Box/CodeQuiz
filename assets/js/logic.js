@@ -1,4 +1,4 @@
-import {storehighScores, loadHighScores} from "./storage.js";
+import {storeHighScores, loadHighScores} from "./storage.js";
 import {hideScores, hideFinalScore, hideQuestions, hideQuizStart} from "./displayPageContent.js"
 
 const timerElement = document.querySelector('.timer');
@@ -15,7 +15,7 @@ let stoptimer = false;
 // current question
 let questionCount = 0;
 //current question correct option answer 1 - 4
-let correctAnswers = 0;
+export let correctAnswers = 0;
 //current answer input
 let currentAnswer = 0;
 
@@ -134,7 +134,7 @@ function showHighestScores() {
 
 //initailises the game start
 function init() {
-    storehighScores();
+    loadHighScores();
     hideScores(true);
     hideQuestions(true)
     hideFinalScore(true);
